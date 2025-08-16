@@ -17,5 +17,9 @@
     "nodemon": "^2.0.22"
   },
   "license": "MIT",
-  "keywords": ["formulaire", "retour", "utilisateur", "feedback", "application web"]
+  "keywords": ["formulaire", "retour", "utilisateur", "feedback", "application web"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/formulaire-retour-utilisateur.git"
+  }
 }
