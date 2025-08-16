@@ -32,7 +32,8 @@ app.post('/api/retours', async (req, res) => {
         await retour.save();
         res.status(201).send(retour);
     } catch (error) {
-        res.status(400).send(error);
+        console.error('Erreur lors de la sauvegarde:', error);
+        res.status(400).send({ message: 'Erreur lors de la création du retour', error });
     }
 });
 
@@ -41,7 +42,8 @@ app.get('/api/retours', async (_req, res) => {
         const retours = await Retour.find();
         res.status(200).send(retours);
     } catch (error) {
-        res.status(500).send(error);
+        console.error('Erreur lors de la récupération des retours:', error);
+        res.status(500).send({ message: 'Erreur lors de la récupération des retours', error });
     }
 });
 
