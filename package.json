@@ -16,5 +16,6 @@
   "devDependencies": {
     "nodemon": "^2.0.22"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": ["formulaire", "retour", "utilisateur", "feedback", "application web"]
 }
