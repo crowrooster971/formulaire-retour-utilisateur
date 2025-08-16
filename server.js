@@ -16,7 +16,7 @@ mongoose.connect('mongodb://localhost:27017/retours', { useNewUrlParser: true, u
     .then(() => console.log('Connecté à MongoDB'))
     .catch(err => console.error('Erreur de connexion à MongoDB:', err));
 
-// Mongoose Schema
+// Mongoose Schema for Retour
 const retourSchema = new mongoose.Schema({
     nom: String,
     message: String,
@@ -25,7 +25,7 @@ const retourSchema = new mongoose.Schema({
 
 const Retour = mongoose.model('Retour', retourSchema); // Create Retour model
 
-// Routes
+// Route to create a new retour
 app.post('/api/retours', async (req, res) => {
     const { nom, message, categorie } = req.body; // Destructuring request body
     if (!nom || !message || !categorie) { // Check for missing fields
@@ -41,6 +41,7 @@ app.post('/api/retours', async (req, res) => {
     }
 });
 
+// Route to retrieve all retours
 app.get('/api/retours', async (_req, res) => {
     try {
         const retours = await Retour.find(); // Retrieve all retours from the database
@@ -51,6 +52,7 @@ app.get('/api/retours', async (_req, res) => {
     }
 });
 
+// Start the server
 app.listen(PORT, () => {
     console.log(`Serveur en cours d'exécution sur le port ${PORT}`); // Start the server and log the message
 });
