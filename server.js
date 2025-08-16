@@ -27,6 +27,10 @@ const Retour = mongoose.model('Retour', retourSchema); // Create Retour model
 
 // Routes
 app.post('/api/retours', async (req, res) => {
+    const { nom, message, categorie } = req.body; // Destructuring request body
+    if (!nom || !message || !categorie) { // Check for missing fields
+        return res.status(400).send({ message: 'Tous les champs sont requis (nom, message, catégorie)' }); // Handle missing fields
+    }
     const retour = new Retour(req.body); // Create a new retour from the request body
     try {
         await retour.save(); // Save the retour to the database
