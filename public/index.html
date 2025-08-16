@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de Retour Utilisateur</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Soumettez votre Retour</h1>
+        <form id="retourForm">
+            <div>
+                <label for="nom">Nom:</label>
+                <input type="text" id="nom" required>
+            </div>
+            <div>
+                <label for="message">Message:</label>
+                <textarea id="message" required></textarea>
+            </div>
+            <div>
+                <label for="categorie">Catégorie:</label>
+                <select id="categorie">
+                    <option value="suggestion">Suggestion</option>
+                    <option value="problème">Problème</option>
+                    <option value="autres">Autres</option>
+                </select>
+            </div>
+            <button type="submit">Soumettre</button>
+        </form>
+        <h2>Retours Soumis</h2>
+        <ul id="retourList"></ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
